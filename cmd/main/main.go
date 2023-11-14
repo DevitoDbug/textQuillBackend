@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/gorilla/mux"
+	"net/http"
+	"textQuillBackend/pkg/routes"
+)
 
 func main() {
-	fmt.Println("This is the first test file")
+	port := ":8000"
+
+	r := mux.NewRouter()
+	routes.RegisterRoutes(r)
+
+	fmt.Println("Starting server at port", port)
+	http.ListenAndServe(port, nil)
 }
