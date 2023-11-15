@@ -14,5 +14,5 @@ func main() {
 	routes.RegisterRoutes(r)
 
 	fmt.Println("Starting server at port", port)
-	http.ListenAndServe(port, nil)
+	http.ListenAndServe(port, r)
 }
